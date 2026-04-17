@@ -8,7 +8,7 @@
 
 ##  Submission Requirements
 
-Submit a **GitHub repository** containing: `https://github.com/KaitoKidKao/day12_ha-tang-cloud_va_deployment`
+Submit a **GitHub repository** containing: `https://github.com/KaitoKidKao/day12-agent-deployment`
 
 ### 1. Mission Answers (40 points)
 
@@ -183,7 +183,7 @@ done
 **Submit your GitHub repository URL:**
 
 ```
-https://github.com/your-username/day12-agent-deployment
+https://github.com/KaitoKidKao/day12-agent-deployment
 ```
 
 **Deadline:** 17/4/2026
