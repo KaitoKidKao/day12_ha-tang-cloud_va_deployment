@@ -12,7 +12,7 @@ services:
   - type: web
     name: ai-agent
     runtime: python
-    rootDir: 03-cloud-deployment/railway
+    rootDir: 03-cloud-deployment/render
     region: singapore         # Chọn region gần user nhất
     plan: free                # free | starter | standard | pro
 
@@ -48,8 +48,8 @@ services:
     plan: free
     maxmemoryPolicy: allkeys-lru
     ipAllowList:
-      - cidr: 0.0.0.0/0
-        description: allow everywhere
+      - source: 0.0.0.0/0
+        description: everywhere
 
 # ============================================================
 # Cách deploy:
