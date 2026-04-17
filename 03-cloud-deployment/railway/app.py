@@ -9,10 +9,16 @@ from datetime import datetime, timezone
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from pydantic import BaseModel
 from utils.mock_llm import ask
 
 app = FastAPI(title="Agent on Railway", version="1.0.0")
 START_TIME = time.time()
+
+
+class Question(BaseModel):
+    question: str
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -32,9 +38,8 @@ def root():
 
 
 @app.post("/ask")
-async def ask_agent(request: Request):
-    body = await request.json()
-    question = body.get("question", "")
+async def ask_agent(data: Question):
+    question = data.question
     if not question:
         raise HTTPException(422, "question required")
     return {

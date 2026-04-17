@@ -1,14 +1,14 @@
 #  Delivery Checklist — Day 12 Lab Submission
 
-> **Student Name:** _________________________  
-> **Student ID:** _________________________  
-> **Date:** _________________________
+> **Student Name:** Nguyễn Trí Cao 
+> **Student ID:** 2A202600223 
+> **Date:** 17/04/2026
 
 ---
 
 ##  Submission Requirements
 
-Submit a **GitHub repository** containing:
+Submit a **GitHub repository** containing: `https://github.com/KaitoKidKao/day12_ha-tang-cloud_va_deployment`
 
 ### 1. Mission Answers (40 points)
 

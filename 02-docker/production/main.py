@@ -11,6 +11,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from pydantic import BaseModel
 from utils.mock_llm import ask
 
 logging.basicConfig(
@@ -21,6 +22,10 @@ logger = logging.getLogger(__name__)
 
 START_TIME = time.time()
 is_ready = False
+
+
+class Question(BaseModel):
+    question: str
 
 
 @asynccontextmanager
@@ -55,9 +60,8 @@ def root():
 
 
 @app.post("/ask")
-async def ask_agent(request: Request):
-    body = await request.json()
-    question = body.get("question", "")
+async def ask_agent(data: Question):
+    question = data.question
     if not question:
         raise HTTPException(422, "question required")
     logger.info(json.dumps({"event": "request", "q_len": len(question)}))
